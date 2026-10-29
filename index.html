@@ -716,4 +716,603 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-900/90 border... (31 Ko restants)
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 relative">
+                    <span class="font-pixel text-3xl text-amber-500/30 absolute top-4 right-5">02</span>
+                    <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-pixel mb-4">2</div>
+                    <h3 class="font-rpg font-bold text-lg text-white mb-2">Activez le Pack 3D</h3>
+                    <p class="text-sm text-slate-400">
+                        Autorisez le chargement automatique du Resource Pack du serveur pour profiter des cosmétiques, blocs et objets exclusifs.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 relative">
+                    <span class="font-pixel text-3xl text-indigo-500/30 absolute top-4 right-5">03</span>
+                    <div class="w-11 h-11 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-pixel mb-4">3</div>
+                    <h3 class="font-rpg font-bold text-lg text-white mb-2">Lancez votre Survie</h3>
+                    <p class="text-sm text-slate-400">
+                        Éloignez-vous du spawn, bâtissez votre base secrète, formez votre team et rejoignez notre <a href="https://discord.gg/WJkbK4nQe" target="_blank" rel="noopener noreferrer" class="discord-link text-indigo-400 hover:text-indigo-300 underline font-semibold">serveur Discord officiel</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Box Finale Call-to-Action -->
+            <div class="mt-12 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-emerald-950/80 via-slate-900 to-amber-950/60 border border-emerald-500/30 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="text-center lg:text-left">
+                    <h3 class="font-rpg font-bold text-2xl text-white">L'AVENTURE VOUS ATTEND SUR <span class="server-name-text text-emerald-400">VALORIA SMP</span></h3>
+                    <p class="text-sm text-slate-300 mt-1">Compatible Minecraft 1.21.10 • Rejoignez notre communauté sur Discord !</p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0">
+                    <a href="https://discord.gg/WJkbK4nQe" target="_blank" rel="noopener noreferrer" onclick="playClickSound()" class="discord-link w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-pixel text-xs sm:text-sm px-6 py-4 rounded-2xl btn-mc flex items-center justify-center gap-2.5">
+                        <i class="fa-brands fa-discord text-lg"></i>
+                        <span>DISCORD</span>
+                    </a>
+                    <button onclick="copyServerIP()" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-pixel text-xs sm:text-sm px-7 py-4 rounded-2xl btn-mc glow-emerald flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-play"></i>
+                        <span>COPIER L'IP MAINTENANT</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOUTON FLOTTANT POUR PERSONNALISER LA PUB (POUR L'ADMIN DU SERVEUR) -->
+    <button onclick="toggleCustomizerModal()" class="fixed bottom-5 left-5 z-40 bg-slate-900/95 hover:bg-slate-800 text-amber-400 border border-amber-500/40 px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2 text-xs font-pixel backdrop-blur-md transition-transform hover:scale-105">
+        <i class="fa-solid fa-sliders"></i>
+        <span>Personnaliser mon serveur</span>
+    </button>
+
+    <!-- MODALE DE PERSONNALISATION EN DIRECT -->
+    <div id="customizer-modal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-wand-magic-sparkles text-amber-400 text-xl"></i>
+                    <h3 class="font-rpg font-bold text-xl text-white">Configurer ma Page SMP</h3>
+                </div>
+                <button onclick="toggleCustomizerModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-400">
+                Testez directement le nom et l'adresse IP de votre propre serveur Minecraft SMP 1.21.10 sur cette page publicitaire :
+            </p>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-pixel text-slate-300 mb-1.5">NOM DE VOTRE SERVEUR</label>
+                    <input id="input-server-name" type="text" value="VALORIA SMP" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm focus:border-emerald-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-pixel text-slate-300 mb-1.5">ADRESSE IP DU SERVEUR</label>
+                    <input id="input-server-ip" type="text" value="PLAY.VALORIA-SMP.FR" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm font-mono focus:border-emerald-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-pixel text-slate-300 mb-1.5">LIEN D'INVITATION DISCORD</label>
+                    <input id="input-discord-url" type="url" value="https://discord.gg/WJkbK4nQe" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm font-mono focus:border-emerald-500 focus:outline-none">
+                </div>
+            </div>
+
+            <div class="flex gap-3 pt-2">
+                <button onclick="applyCustomization()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-pixel text-xs py-3 rounded-xl btn-mc">
+                    APPLIQUER EN DIRECT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-center text-xs text-slate-500 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-crown text-amber-400"></i>
+                <span class="font-rpg font-bold text-slate-300 server-name-text">VALORIA SMP</span>
+                <span>— Minecraft 1.21.10 • Tous droits réservés © 2026</span>
+                <a href="https://discord.gg/WJkbK4nQe" target="_blank" rel="noopener noreferrer" class="discord-link text-indigo-400 hover:text-indigo-300 ml-2 flex items-center gap-1 font-medium">
+                    <i class="fa-brands fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+            </div>
+            <p class="text-slate-600">
+                Non affilié à Mojang AB ou Microsoft. Minecraft est une marque déposée de Mojang Synergies AB.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS JAVASCRIPT (Audio Web, Three.js, Factions, Carte, Copie IP) -->
+    <script>
+        /* ==========================================
+           1. CONFIGURATION GLOBALE & AUDIO SYNTHÉTISÉ
+           ========================================== */
+        let currentServerIP = "play.valoria-smp.fr";
+        let soundEnabled = true;
+        let audioCtx = null;
+
+        // Initialise le contexte Web Audio au premier clic pour des bruitages façon Minecraft
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+        }
+
+        // Joue un petit son d'orbe d'XP ou de clic UI
+        function playClickSound(type = 'click') {
+            if (!soundEnabled) return;
+            try {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                const now = audioCtx.currentTime;
+                if (type === 'xp') {
+                    // Son d'orbe d'XP Minecraft lors de la copie de l'IP
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(587.33, now); // D5
+                    osc.frequency.exponentialRampToValueAtTime(880, now + 0.18); // A5
+                    gain.gain.setValueAtTime(0.15, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+                    osc.start(now);
+                    osc.stop(now + 0.25);
+                } else {
+                    // Petit clic boisé/pierre
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(320, now);
+                    osc.frequency.exponentialRampToValueAtTime(140, now + 0.06);
+                    gain.gain.setValueAtTime(0.12, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.07);
+                    osc.start(now);
+                    osc.stop(now + 0.07);
+                }
+            } catch (e) {
+                // Ignore si l'audio est bloqué par le navigateur
+            }
+        }
+
+        function toggleAudio() {
+            soundEnabled = !soundEnabled;
+            const icon = document.getElementById('sound-icon');
+            if (soundEnabled) {
+                icon.className = 'fa-solid fa-volume-high text-emerald-400';
+                playClickSound('xp');
+            } else {
+                icon.className = 'fa-solid fa-volume-xmark text-slate-500';
+            }
+        }
+
+        /* ==========================================
+           2. COPIE DE L'IP SANS ALERT() (AVEC TOAST)
+           ========================================== */
+        function copyServerIP() {
+            playClickSound('xp');
+            const tempInput = document.createElement('textarea');
+            tempInput.value = currentServerIP;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast("IP Copiée avec succès !", `Rejoignez-nous sur ${currentServerIP}`);
+        }
+
+        let toastTimeout;
+        function showToast(title, desc) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-desc').textContent = desc;
+            toast.classList.remove('translate-x-[150%]');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-x-[150%]');
+            }, 3500);
+        }
+
+        function toggleMobileMenu() {
+            playClickSound();
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        /* ==========================================
+           3. DONNÉES & LOGIQUE DES FACTIONS RP
+           ========================================== */
+        const factionsData = [
+            {
+                title: "L'EMPIRE D'AETHELGARD",
+                subtitle: "Royaume Humain & Paladins",
+                motto: "« Par le Fer et la Couronne, nous régnerons. »",
+                lore: "Fondé sur les ruines de l'Ancien Monde, l'Empire d'Aethelgard rassemble les bâtisseurs de cathédrales, les chevaliers en armure lourde et les riches guildes marchandes. Ses citoyens bénéficient d'une protection militaire constante et de terres fertiles.",
+                icon: "fa-solid fa-chess-king",
+                color: "amber",
+                tags: ["Capitale : Solaria", "Régime : Monarchie"],
+                stats: { mil: 90, mag: 45, eco: 85, dip: 75 },
+                bonus: "+15% XP de Forge & Récoltes Agricoles"
+            },
+            {
+                title: "LE PACTE SYLVESTRE",
+                subtitle: "Elfes, Druides & Rôdeurs",
+                motto: "« Les racines se souviennent de chaque serment. »",
+                lore: "Gardiens de la forêt millénaire d'Ysil, les membres du Pacte vivent en symbiose avec les esprits élémentaires. Redoutables archers et maîtres herboristes, ils défendent farouchement leurs frontières contre l'industrialisation.",
+                icon: "fa-solid fa-leaf",
+                color: "emerald",
+                tags: ["Capitale : Arbre-Monde Ysil", "Régime : Conseil Sage"],
+                stats: { mil: 70, mag: 85, eco: 60, dip: 90 },
+                bonus: "+20% Vitesse en Forêt & Potions Doublées"
+            },
+            {
+                title: "LE CONCLAVE D'ONYX",
+                subtitle: "Archimages & Érudits des Arcanes",
+                motto: "« Le savoir est la seule véritable couronne. »",
+                lore: "Retirés dans leur citadelle flottante au-dessus des brumes, les mages du Conclave étudient les failles dimensionnelles et l'enchantement ancien. Ils détiennent le monopole des portails de téléportation et des reliques.",
+                icon: "fa-solid fa-hat-wizard",
+                color: "purple",
+                tags: ["Capitale : Tour d'Onyx", "Régime : Magocratie"],
+                stats: { mil: 60, mag: 100, eco: 75, dip: 65 },
+                bonus: "+25% Puissance des Sorts & Enchantements"
+            },
+            {
+                title: "LES CLANS DE FER-ROUGE",
+                subtitle: "Maîtres Forgerons & Guerriers des Monts",
+                motto: "« Forgé dans le magma, invaincu au combat. »",
+                lore: "Creusant leurs cités titanesques au cœur des volcans de l'Est, les Clans de Fer-Rouge extraient le Mithril et l'Obsidienne. Leurs ingénieurs maîtrisent la Redstone avancée et les armes de siège dévastatrices.",
+                icon: "fa-solid fa-hammer",
+                color: "rose",
+                tags: ["Capitale : Karak-Dûm", "Régime : Haut-Clan"],
+                stats: { mil: 95, mag: 30, eco: 95, dip: 50 },
+                bonus: "+20% Minage de Minerais Rares & Armures"
+            }
+        ];
+
+        function selectFaction(index) {
+            playClickSound();
+            const f = factionsData[index];
+
+            // Mise à jour des boutons d'onglets
+            const tabs = document.querySelectorAll('.faction-tab');
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.className = `faction-tab flex items-center gap-3 p-4 rounded-2xl border transition-all text-left bg-slate-900 border-${f.color}-500 shadow-lg`;
+                } else {
+                    tab.className = `faction-tab flex items-center gap-3 p-4 rounded-2xl border transition-all text-left bg-slate-900/60 border-slate-800 hover:border-slate-700`;
+                }
+            });
+
+            // Mise à jour du contenu
+            document.getElementById('faction-title').textContent = f.title;
+            document.getElementById('faction-subtitle').textContent = f.subtitle;
+            document.getElementById('faction-motto').textContent = f.motto;
+            document.getElementById('faction-lore').textContent = f.lore;
+            document.getElementById('faction-icon').className = `${f.icon} text-6xl`;
+            document.getElementById('faction-bonus').textContent = f.bonus;
+
+            // Tags
+            const tagsContainer = document.getElementById('faction-tags');
+            tagsContainer.innerHTML = f.tags.map(t => `<span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 text-xs font-pixel text-slate-300">${t}</span>`).join('');
+
+            // Barres de stats
+            document.getElementById('stat-mil-val').textContent = f.stats.mil + '%';
+            document.getElementById('stat-mil-bar').style.width = f.stats.mil + '%';
+
+            document.getElementById('stat-mag-val').textContent = f.stats.mag + '%';
+            document.getElementById('stat-mag-bar').style.width = f.stats.mag + '%';
+
+            document.getElementById('stat-eco-val').textContent = f.stats.eco + '%';
+            document.getElementById('stat-eco-bar').style.width = f.stats.eco + '%';
+
+            document.getElementById('stat-dip-val').textContent = f.stats.dip + '%';
+            document.getElementById('stat-dip-bar').style.width = f.stats.dip + '%';
+        }
+
+        /* ==========================================
+           4. CARTE INTERACTIVE DU CONTINENT
+           ========================================== */
+        const mapLocations = [
+            {
+                title: "CITÉ IMPÉRIALE DE SOLARIA",
+                badge: "ZONE PACIFIQUE & COMMERCE",
+                coords: "X: 120 | Z: -450",
+                desc: "Le carrefour économique du serveur. Vous y trouverez l'Hôtel des Ventes, la Grande Banque Impériale, des auberges animées par les joueurs ainsi que des parcelles habitables à louer ou acheter.",
+                pvp: "Désactivé (Garde Royale)",
+                lvl: "Tous niveaux (Départ)",
+                spec: "Marché Central & Politique"
+            },
+            {
+                title: "SANCTUAIRE D'YSIL",
+                badge: "TERRITOIRE SYLVESTRE",
+                coords: "X: -1420 | Z: 310",
+                desc: "Une cité suspendue dans les branches d'un arbre géant centenaire. Lieu sacré où poussent des plantes alchimiques introuvables ailleurs sur le continent.",
+                pvp: "Sous juridiction elfique",
+                lvl: "Niveau 10+ (Exploration)",
+                spec: "Herboristerie & Enchantement"
+            },
+            {
+                title: "TOUR FLOTTANTE D'ONYX",
+                badge: "ACADÉMIE DE MAGIE",
+                coords: "X: 640 | Z: 1120",
+                desc: "Accessible uniquement par portail arcanique ou dirigeable. Les apprentis mages y passent leurs épreuves pour débloquer leurs bâtons élémentaires.",
+                pvp: "Duels magiques autorisés",
+                lvl: "Niveau 20+ (Érudits)",
+                spec: "Sortilèges, Runes & Portails"
+            },
+            {
+                title: "LE GOUFFRE IGNÉ (DONJON MONDIAL)",
+                badge: "ZONE HOSTILE & PVP ACTIF",
+                coords: "X: 2450 | Z: -1890",
+                desc: "Un cratère volcanique infesté de Golems de Cendre et gardé par le Dragon Noir Ignis. Les ressources y sont extrêmement précieuses, mais le pillage entre factions y est autorisé.",
+                pvp: "ACTIF (Butin partiel)",
+                lvl: "Niveau 40+ (Escouade)",
+                spec: "Mithril & Boss Légendaire"
+            }
+        ];
+
+        function selectMapLocation(index) {
+            playClickSound();
+            const loc = mapLocations[index];
+            document.getElementById('loc-title').textContent = loc.title;
+            document.getElementById('loc-badge').textContent = loc.badge;
+            document.getElementById('loc-coords').textContent = loc.coords;
+            document.getElementById('loc-desc').textContent = loc.desc;
+            document.getElementById('loc-pvp').textContent = loc.pvp;
+            document.getElementById('loc-lvl').textContent = loc.lvl;
+            document.getElementById('loc-spec').textContent = loc.spec;
+        }
+
+        /* ==========================================
+           5. PERSONNALISATION EN DIRECT DE LA PAGE
+           ========================================== */
+        function toggleCustomizerModal() {
+            playClickSound();
+            const modal = document.getElementById('customizer-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function applyCustomization() {
+            const newName = document.getElementById('input-server-name').value.trim() || "VALORIA SMP";
+            const newIP = document.getElementById('input-server-ip').value.trim() || "PLAY.VALORIA-SMP.FR";
+            const newDiscord = document.getElementById('input-discord-url').value.trim() || "https://discord.gg/WJkbK4nQe";
+
+            currentServerIP = newIP.toLowerCase();
+
+            // Met à jour le nom partout
+            document.getElementById('nav-server-name').innerHTML = `${newName} <span class="text-emerald-400">✦</span>`;
+            document.querySelectorAll('.server-name-text').forEach(el => el.textContent = newName.toUpperCase());
+
+            // Met à jour l'IP partout
+            document.querySelectorAll('.server-ip-text').forEach(el => el.textContent = newIP.toUpperCase());
+
+            // Met à jour tous les liens Discord
+            document.querySelectorAll('.discord-link').forEach(el => el.href = newDiscord);
+
+            toggleCustomizerModal();
+            showToast("Page mise à jour !", `Configurée pour ${newName} (${newIP})`);
+        }
+
+        /* ==========================================
+           6. SCÈNE 3D THREE.JS (ARTÉFACT VOXEL INTERACTIF)
+           ========================================== */
+        let scene, camera, renderer, voxelGroup, floatingCubes = [];
+        let isDragging = false;
+        let prevMouse = { x: 0, y: 0 };
+        let currentThemeIndex = 0;
+
+        const artifactThemes = [
+            { name: "Cristal d'Émeraude", core: 0x10b981, frame: 0x1e293b, orbit: 0x34d399 },
+            { name: "Cœur du Nether", core: 0xf59e0b, frame: 0x451a03, orbit: 0xef4444 },
+            { name: "Orbe de l'End", core: 0x8b5cf6, frame: 0x0f172a, orbit: 0xc084fc }
+        ];
+
+        function initThreeVoxelArtifact() {
+            const container = document.getElementById('voxel-canvas-container');
+            if (!container) return;
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 1.2, 6.2);
+            camera.lookAt(0, 0, 0);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+
+            // Lumières
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+            scene.add(ambientLight);
+
+            const pointLight1 = new THREE.PointLight(0x10b981, 2.2, 15);
+            pointLight1.position.set(4, 5, 4);
+            scene.add(pointLight1);
+
+            const pointLight2 = new THREE.PointLight(0xf59e0b, 1.5, 15);
+            pointLight2.position.set(-4, -3, 3);
+            scene.add(pointLight2);
+
+            voxelGroup = new THREE.Group();
+            scene.add(voxelGroup);
+
+            buildVoxelRelic(artifactThemes[0]);
+
+            // Interactions Souris & Tactile pour tourner le bloc 3D
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                prevMouse = { x: e.clientX, y: e.clientY };
+            });
+            window.addEventListener('mouseup', () => { isDragging = false; });
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const dx = e.clientX - prevMouse.x;
+                const dy = e.clientY - prevMouse.y;
+                voxelGroup.rotation.y += dx * 0.01;
+                voxelGroup.rotation.x += dy * 0.01;
+                prevMouse = { x: e.clientX, y: e.clientY };
+            });
+
+            // Support Tactile Mobile
+            container.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) {
+                    isDragging = true;
+                    prevMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+                }
+            }, { passive: true });
+            window.addEventListener('touchend', () => { isDragging = false; });
+            window.addEventListener('touchmove', (e) => {
+                if (!isDragging || e.touches.length !== 1) return;
+                const dx = e.touches[0].clientX - prevMouse.x;
+                const dy = e.touches[0].clientY - prevMouse.y;
+                voxelGroup.rotation.y += dx * 0.01;
+                voxelGroup.rotation.x += dy * 0.01;
+                prevMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }, { passive: true });
+
+            // Redimensionnement fluide
+            window.addEventListener('resize', () => {
+                if (!container) return;
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+        }
+
+        function buildVoxelRelic(theme) {
+            // Nettoie l'ancien groupe
+            while (voxelGroup.children.length > 0) {
+                voxelGroup.remove(voxelGroup.children[0]);
+            }
+            floatingCubes = [];
+
+            // Noyau magique lumineux style Bloc d'Émeraude / Balise Minecraft
+            const coreGeo = new THREE.BoxGeometry(1.35, 1.35, 1.35);
+            const coreMat = new THREE.MeshStandardMaterial({
+                color: theme.core,
+                emissive: theme.core,
+                emissiveIntensity: 0.45,
+                roughness: 0.2,
+                metalness: 0.3
+            });
+            const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+            voxelGroup.add(coreMesh);
+
+            // Cadre externe façon cage de Spawner / Relique en obsidienne
+            const frameGeo = new THREE.BoxGeometry(1.95, 1.95, 1.95);
+            const frameMat = new THREE.MeshStandardMaterial({
+                color: theme.frame,
+                wireframe: true,
+                roughness: 0.4
+            });
+            const frameMesh = new THREE.Mesh(frameGeo, frameMat);
+            voxelGroup.add(frameMesh);
+
+            // Petits blocs de runes en orbite autour du cœur
+            const miniGeo = new THREE.BoxGeometry(0.28, 0.28, 0.28);
+            const miniMat = new THREE.MeshStandardMaterial({
+                color: theme.orbit,
+                emissive: theme.orbit,
+                emissiveIntensity: 0.6
+            });
+
+            for (let i = 0; i < 14; i++) {
+                const miniCube = new THREE.Mesh(miniGeo, miniMat);
+                const angle = (i / 14) * Math.PI * 2;
+                const radius = 1.65 + (i % 2) * 0.35;
+                miniCube.userData = {
+                    angle: angle,
+                    radius: radius,
+                    speed: 0.012 + (i % 3) * 0.004,
+                    yOffset: (Math.random() - 0.5) * 1.6
+                };
+                voxelGroup.add(miniCube);
+                floatingCubes.push(miniCube);
+            }
+        }
+
+        function switchArtifactTheme() {
+            playClickSound('xp');
+            currentThemeIndex = (currentThemeIndex + 1) % artifactThemes.length;
+            const theme = artifactThemes[currentThemeIndex];
+            document.getElementById('artifact-name-badge').textContent = theme.name;
+            buildVoxelRelic(theme);
+        }
+
+        /* ==========================================
+           7. PARTICULES D'AMBIANCE (CANVAS 2D) & BOUCLE
+           ========================================== */
+        const bgCanvas = document.getElementById('bg-particles');
+        const bgCtx = bgCanvas.getContext('2d');
+        let particles = [];
+
+        function resizeBgCanvas() {
+            bgCanvas.width = window.innerWidth;
+            bgCanvas.height = window.innerHeight;
+        }
+
+        function initBgParticles() {
+            resizeBgCanvas();
+            particles = [];
+            for (let i = 0; i < 45; i++) {
+                particles.push({
+                    x: Math.random() * bgCanvas.width,
+                    y: Math.random() * bgCanvas.height,
+                    size: Math.floor(Math.random() * 4) + 2, // Particules carrées façon pixels Minecraft
+                    speedY: -(Math.random() * 0.4 + 0.15),
+                    alpha: Math.random() * 0.5 + 0.1,
+                    color: Math.random() > 0.3 ? '#10b981' : '#f59e0b'
+                });
+            }
+        }
+
+        function animateLoop() {
+            requestAnimationFrame(animateLoop);
+
+            // Animation du modèle 3D Three.js
+            if (voxelGroup && renderer && scene && camera) {
+                if (!isDragging) {
+                    voxelGroup.rotation.y += 0.006;
+                    voxelGroup.rotation.x = Math.sin(Date.now() * 0.001) * 0.18;
+                }
+                floatingCubes.forEach((cube, idx) => {
+                    cube.userData.angle += cube.userData.speed;
+                    cube.position.x = Math.cos(cube.userData.angle) * cube.userData.radius;
+                    cube.position.z = Math.sin(cube.userData.angle) * cube.userData.radius;
+                    cube.position.y = cube.userData.yOffset + Math.sin(Date.now() * 0.002 + idx) * 0.25;
+                    cube.rotation.x += 0.02;
+                    cube.rotation.y += 0.02;
+                });
+                renderer.render(scene, camera);
+            }
+
+            // Animation des particules carrées en arrière-plan
+            bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+            particles.forEach(p => {
+                p.y += p.speedY;
+                if (p.y < -10) p.y = bgCanvas.height + 10;
+                bgCtx.fillStyle = p.color;
+                bgCtx.globalAlpha = p.alpha;
+                bgCtx.fillRect(p.x, p.y, p.size, p.size);
+            });
+        }
+
+        // Simulation du compteur de joueurs en ligne dynamique
+        function startLivePlayerCounter() {
+            const playerEl = document.getElementById('online-players');
+            setInterval(() => {
+                let current = parseInt(playerEl.textContent, 10);
+                const delta = Math.floor(Math.random() * 5) - 2; // Entre -2 et +2
+                current = Math.max(115, Math.min(248, current + delta));
+                playerEl.textContent = current;
+            }, 4500);
+        }
+
+        window.addEventListener('resize', resizeBgCanvas);
+
+        // Démarrage garanti après le chargement complet de la fenêtre
+        window.onload = function () {
+            initThreeVoxelArtifact();
+            initBgParticles();
+            startLivePlayerCounter();
+            animateLoop();
+        };
+    </script>
+</body>
+</html>
